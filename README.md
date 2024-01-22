@@ -1,1 +1,0 @@
-# -Cloud-Computing-on-AWS-Ultimate-Beginners-Course---2024

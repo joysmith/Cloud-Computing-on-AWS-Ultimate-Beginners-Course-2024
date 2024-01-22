@@ -1,7 +1,10 @@
-55. Scalability
-56. High Availability
+55. [Scalability](#55)
+56. [High Availability](#56)
 
 ---
 
-55. Scalability
-56. High Availability
+<br>
+
+### 55. Scalability<a id="55"></a>
+
+### 56. High Availability<a id="56"></a>
