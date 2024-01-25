@@ -23,4 +23,8 @@
 
 ### 17. AWS Budgets - Overview<a id="17"></a>
 
+- allows you to create a simple budget and to send alarms to your email for example, if you are close to or exceeding your designated budget
+- by setting a budget you can monitor your budget threshold from the start, once it's reached, and if it has been reached
+- it is particularly effective in not only managing your current costs, but also in **planning and forecasting costs** for the future
+
 ### 18. Create and set a designated budget on AWS - [Lab]<a id="18"></a>
