@@ -7,7 +7,7 @@
 
 <br>
 
-### 5. General IT concepts<a id="5"></a>
+## 5. General IT concepts<a id="5"></a>
 
 #### What is IT?
 
@@ -29,7 +29,7 @@
 - people need to monitor all the servers in-case of an outage
 - need to have air cooling systems
 
-### 6. Cloud computing - An introduction<a id="6"></a>
+## 6. Cloud computing - An introduction<a id="6"></a>
 
 #### What is cloud computing?
 
@@ -84,7 +84,7 @@
 - increase dexterity and speed
 - lower pay-as-you-go costs
 
-### 7. Cloud deployment models<a id="7"></a>
+## 7. Cloud deployment models<a id="7"></a>
 
 - public model
 - private model
@@ -109,7 +109,7 @@
 
 - some servers are kept on- remise while other services are extended to the cloud
 
-### 8. The types of cloud computing<a id="8"></a>
+## 8. The types of cloud computing<a id="8"></a>
 
 #### Infra as a service
 
