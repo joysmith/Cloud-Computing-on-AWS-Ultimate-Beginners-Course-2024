@@ -24,6 +24,16 @@
 
 ### 19. IAM - Overview<a id="19"></a>
 
+<img src="notes/6 1.png" width="700">
+  
+<img src="notes/6 2.png" width="700">
+   
+<img src="notes/6 3.png" width="700">
+  
+<img src="notes/6 4.png.png" width="700">
+  
+<img src="notes/6 5.png" width="700">
+
 ### 20. IAM - Create a user and a group - [Lab]<a id="20"></a>
 
 ### 21. IAM - Alternate sign-in option<a id="21"></a>
