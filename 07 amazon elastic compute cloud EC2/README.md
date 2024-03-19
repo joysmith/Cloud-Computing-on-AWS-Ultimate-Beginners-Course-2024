@@ -344,3 +344,11 @@ echo "<h1> Hello from Mars!!! from $(hostname -f)</h1>" > /var/www/html/index.ht
 #### Instances
 
 - select running instance, copy public-IPv4 paste to browser url
+
+---
+
+#### How to delete AMI
+
+- Go to aws console --> EC2 --> running instance
+- In left side click hamburger icon, Images-dropdown--> AMIs
+- select images, Actions --> Deregister AMI --> deregister all
