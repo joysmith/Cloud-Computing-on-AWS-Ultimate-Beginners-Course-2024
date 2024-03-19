@@ -153,22 +153,69 @@ NOTE: whenever we stop and start the instance, public-IPv4 address change and as
 
 ### 44. EC2 - Exploring various instance types - [Lab]<a id="44"></a>
 
+- Aws instance type [click me](https://aws.amazon.com/ec2/instance-types/?gclid=CjwKCAjw7-SvBhB6EiwAwYdCAdBARHIsgEH3VUZq-EOaSqtyvkpjk4wBUfCqVtav6IJ3176USCmUghoCyIsQAvD_BwE&trk=32f4fbd0-ffda-4695-a60c-8857fab7d0dd&sc_channel=ps&ef_id=CjwKCAjw7-SvBhB6EiwAwYdCAdBARHIsgEH3VUZq-EOaSqtyvkpjk4wBUfCqVtav6IJ3176USCmUghoCyIsQAvD_BwE:G:s&s_kwcid=AL!4422!3!536392685920!e!!g!!aws%20instance%20types!11539707735!118057054048)
+
 ### 45. EC2 - SSH with Windows - [Optional]<a id="45"></a>
+
+<img src="notes/ssh.png" width="700">
 
 ### 46. EC2 - Remotely connect to our EC2 Instance - [Optional]<a id="46"></a>
 
+- download putty and install
+- Go to aws console --> EC2 --> running instance --> select instance, copy public-ipv4
+- open putty
+
+#### putty
+
+- host name : paste ip address here
+- port : 22
+- ✔️ SSH
+
+##### Under Credential-dropdown
+
+- SSH --> Auth --> Browse: private key
+
+#### putty
+
+- saved session: MyEC2Instance --> save
+- select the saved "MyEC2Instance" --> load
+
 ### 47. EC2 - Introduction to Instance connect<a id="47"></a>
+
+<img src="notes/instant connect.png" width="700">
 
 ### 48. EC2 - Utilize Instance connect - [Lab]<a id="48"></a>
 
+- Go to aws console --> EC2 --> running instance --> select instance
+- Action: Connect
+- click on "Connect"
+
+```sh
+whoami
+
+clear
+```
+
 ### 49. EC2 - Resource cleanup - [Lab]<a id="49"></a>
+
+- Go to aws console --> EC2 --> running instance --> select instance
+- instance state: stop instance
+- instance state: terminate instance
 
 ### 50. EC2 - Instance pricing options<a id="50"></a>
 
+<img src="notes/ec2 pricing.png" width="700">
+
 ### 51. EC2 - Instance pricing options - Deep dive - [Lab]<a id="51"></a>
+
+[Pricing option](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html)
 
 ### 52. EC2 - Quick start AMI - [Reminder]<a id="52"></a>
 
 ### 53. EC2 - What is an AMI?<a id="53"></a>
+
+<img src="notes/AMI 1.png" width="700">
+
+<img src="notes/AMI 2.png" width="700">
 
 ### 54. EC2 - Building our own AMI - [Lab]<a id="54"></a>
