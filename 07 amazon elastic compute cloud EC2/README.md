@@ -219,3 +219,128 @@ clear
 <img src="notes/AMI 2.png" width="700">
 
 ### 54. EC2 - Building our own AMI - [Lab]<a id="54"></a>
+
+- Go to aws console --> EC2 --> launch instance
+
+#### Name and tag
+
+- name and tags: TestServer
+
+#### Application and OS image (Amazon Machine Image)
+
+- Quick start: Amazon Linux
+- default: Amazon Linux 2023 AMI (free tier eligible)
+
+#### Instance type
+
+- instance type: t2.micro (free tier eligible)
+
+#### key pair (login)
+
+- click on "create new key pair"
+- key pair name: secret
+- key pair type: RSA
+- private key file format: .ppk (for windows)
+- click "create key pair" to download file
+
+#### Network settings
+
+- Firewall (security group): Create security group
+- ✔️ Select existing security group
+- common security group: launch wizard 1
+
+#### Configure storage
+
+- 8 GB gp3
+
+#### Advance details
+
+- User data: paste below code (HTML markup)
+
+```sh
+#!/bin/bash
+# User data code
+# Proceed to install httpd - (Amazon Linux 2 version)
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+```
+
+#### Summary
+
+- click on "Launch Instance" --> "view all instance"
+
+#### Instances
+
+- select running instance, copy public-IPv4 paste to browser url
+
+---
+
+#### How to make AMI
+
+- Action --> image and templates --> create image
+
+#### create image
+
+- image name: MyFirstCustomAMI
+- everything will be default click on "Create Image"
+
+#### Instances
+
+- click on left hamburger icon, under Images-dropdown
+- click on "AMI" to see our own image
+
+#### How to create our own AMI using custom image
+
+- Go to aws console --> EC2 --> launch instance
+
+#### Name and tag
+
+- name and tags: TestMyAMIServer
+
+#### Application and OS image (Amazon Machine Image)
+
+- My AMI: Owned by me
+- default: MyFirstCustomAMI
+
+#### Instance type
+
+- instance type: t2.micro (free tier eligible)
+
+#### key pair (login)
+
+- click on "create new key pair"
+- key pair name: secret
+- key pair type: RSA
+- private key file format: .ppk (for windows)
+- click "create key pair" to download file
+
+#### Network settings
+
+- Firewall (security group): Create security group
+- ✔️ Select existing security group
+- common security group: launch wizard 1
+
+#### Configure storage
+
+- 8 GB gp3
+
+#### Advance details
+
+- User data: paste below code (HTML markup)
+
+```sh
+#!/bin/bash
+# User data code
+# Proceed to install httpd - (Amazon Linux 2 version)
+echo "<h1> Hello from Mars!!! from $(hostname -f)</h1>" > /var/www/html/index.html
+```
+
+#### Summary
+
+- click on "Launch Instance" --> "view all instance"
+
+#### Instances
+
+- select running instance, copy public-IPv4 paste to browser url
