@@ -248,12 +248,138 @@ Note- Every time we stop and start server the public and private ip changes
 
 <img src="notes/asg 8.png" width="700">
 
-### 61. Specify a launch template - [Lab]<a id="61"></a>
+### 61. Specify a launch template - [Lab]<a id="61"></a> Part-1
 
-### 62. Create an auto scaling group - [Lab]<a id="62"></a>
+- Go to EC2 dashboard, under Instance-dropdown --> Launch templates --> "Create launch template"
 
-### 63. Auto scaling groups - Deep dive - [Lab]<a id="63"></a>
+#### Launch template name and description
 
-### 64. Testing our auto scaling group - [Lab]<a id="64"></a>
+- Launch template name: MyTemplate
+- Template version description: MyTemplate
+
+#### Application and OS Image (Amazon Machine Image)
+
+- Quick start: Amazon Linux
+
+#### Instance type
+
+- instance type: t2.micro
+
+#### Key pair login
+
+- create new key pair OR use old one
+
+#### Network settings
+
+- Firewall (security group): select existing security group
+- security group: launch-wizard-1
+
+#### Advanced details
+
+- user data: paste this code in user data
+
+```sh
+#!/bin/bash
+# User data code
+# Proceed to install httpd - (Amazon Linux 2 version)
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "<h1> Hello from Mars!!! from $(hostname -f)</h1>" > /var/www/html/index.html
+```
+
+#### summary
+
+- click on "Create launch template" --> view launch template
+
+### 62. Create an auto scaling group - [Lab]<a id="62"></a> Part-2
+
+- Go to EC2 dashboard, under Auto Scaling-dropdown--> Auto scaling Groups --> "Create Auto scaling group"
+
+#### Name
+
+- Auto scaling group name: MyFirstASG
+
+#### Launch template
+
+- Launch template: Mytemplate
+- clink "Next"
+
+#### Network
+
+- Availability zone and subsets: select alphabetically in order, 2a, 2b, 2c
+- Scroll down click "Next"
+
+#### Load balancing
+
+- use the option below to attach...: Attach tp existing load balancer
+
+#### Attach to an existing load balancing
+
+- existing load balancer target groups: DemoAppTg
+
+#### Health checks
+
+- ✔️ Turn on elastic load balancing health check
+- Scroll down till end click "Next"
+
+#### Group size
+
+- Desired capacity: 2
+- Minimum capacity: 1
+- Maximum capacity: 3
+- Scroll down till end click on "Next"
+
+#### Add notification
+
+- default
+- click on "Next"
+
+#### Add tags
+
+- default
+- click on "Next"
+
+#### Review
+
+- default
+- Scroll down till end, click on "Create Auto Scaling group"
+
+### 63. Auto scaling groups - Deep dive - [Lab]<a id="63"></a> Part-3
+
+- Select auto scaling groups, and in bottom click on "^" to open menu
+- click on each tab for reviewing and configuring and making changes
+
+### 64. Testing our auto scaling group - [Lab]<a id="64"></a> Part-4
+
+- Go to EC2 dashboard, under Load Balancing-drop down --> Load Balancer(new tab)
+
+#### How to edit desired, maximum, minimum
+
+- Go to EC2 dashboard, under Auto Scaling --> Auto Scaling Groups
+- select any then click "edit"
+- Desired capacity: 1
+- minimum capacity: 1
+- maximum capacity: 2
+- Scroll down to bottom, click on "Update"
 
 ### 65. ELB/ASG - Resource cleanup - [Lab]<a id="65"></a>
+
+#### How to delete auto scaling group
+
+- Go to EC2 dashboard, under Auto Scaling --> Auto Scaling Groups
+- select any group --> Delete --> Delete load balancer
+
+#### How to delete
+
+- Go to EC2 dashboard, under Load Balancing --> Load Balancers
+- select any --> actions
+
+- Go to EC2 dashboard, under Load Balancing --> Target Group
+- select any --> Actions --> Delete
+
+#### How to delete launch template
+
+- Go to EC2 dashboard, under Instances --> Launch Template
+- select any --> Actions --> Delete template
