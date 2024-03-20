@@ -14,11 +14,239 @@
 
 ### 57. Elastic Load Balancing (ELB) - Overview<a id="57"></a>
 
-### 58. Create an application load balancer - [Lab]<a id="58"></a>
+<img src="notes/elb 1.png" width="700">
 
-### 59. Testing our application load balancer - [Lab]<a id="59"></a>
+<img src="notes/elb 2.png" width="700">
+
+<img src="notes/elb 3.png" width="700">
+
+<img src="notes/elb 4.png" width="700">
+
+<img src="notes/elb 5.png" width="700">
+
+<img src="notes/elb 6.png" width="700">
+
+<img src="notes/elb 7.png" width="700">
+
+<img src="notes/elb 8.png" width="700">
+
+<img src="notes/elb 9.png" width="700">
+
+### 58. Create an application load balancer - [Lab]<a id="58"></a> Part-1
+
+We have to create 2 instance to apply, Elastic(application) load balancer
+
+- Go to aws console --> EC2 --> running instance --> Launch instance
+
+#### Launch instance
+
+- name and tags: Server 1
+
+#### Application and OS image (Amazon Machine Image)
+
+- Quick start: Amazon Linux
+- default: Amazon Linux 2023 AMI (free tier eligible)
+
+#### Instance type
+
+- instance type: t2.micro (free tier eligible)
+
+#### key pair (login)
+
+- click on "create new key pair"
+- key pair name: secret
+- key pair type: RSA
+- private key file format: .ppk (for windows)
+- click "create key pair" to download file
+
+#### Network settings
+
+- Firewall (security group): select existing security group
+- Security group: launch-wizard-1
+
+#### Configure storage
+
+- 8 GB gp3
+
+#### Advance details
+
+- User data: paste below code (HTML markup)
+
+```sh
+#!/bin/bash
+# User data code
+# Proceed to install httpd - (Amazon Linux 2 version)
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "<h1> Hello from Mars!!! from $(hostname -f)</h1>" > /var/www/html/index.html
+```
+
+#### Summary
+
+- click on "Launch Instance" --> "view all instance"
+
+---
+
+- Now create second instance
+
+- Go to aws console --> EC2 --> running instance --> Launch instance
+
+#### Launch instance
+
+- name and tags: Server 2
+
+#### Application and OS image (Amazon Machine Image)
+
+- Quick start: Amazon Linux
+- default: Amazon Linux 2023 AMI (free tier eligible)
+
+#### Instance type
+
+- instance type: t2.micro (free tier eligible)
+
+#### key pair (login)
+
+- we can use previous key pair OR we can create new one
+
+- click on "create new key pair"
+- key pair name: secret
+- key pair type: RSA
+- private key file format: .ppk (for windows)
+- click "create key pair" to download file
+
+#### Network settings
+
+- Firewall (security group): select existing security group
+- Security group: launch-wizard-1
+
+#### Configure storage
+
+- 8 GB gp3
+
+#### Advance details
+
+- User data: paste below code (HTML markup)
+
+```sh
+#!/bin/bash
+# User data code
+# Proceed to install httpd - (Amazon Linux 2 version)
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "<h1> Hello from Mars!!! from $(hostname -f)</h1>" > /var/www/html/index.html
+```
+
+#### Summary
+
+- click on "Launch Instance" --> "view all instance"
+
+---
+
+- On left side click hamburger icon, select Load Balancing-dropdown --> Load balancers
+
+#### Load balancers
+
+- click on "Create load balancer"
+
+#### Load balancers types
+
+- Application: create
+
+#### Basic configuration
+
+- load balancer name: demoAppLB
+- scheme: internet-facing
+- Ip address type: IPv4
+
+#### Network mapping
+
+- VPC: default
+- Mappings: us-east-2a, us-east-2b
+
+#### Security group
+
+- remove the default one
+- Open on new tab by click on "create new security group"
+
+##### Basic details
+
+- Security group name: demoAppLB-SG
+- Description: demoAppLB-SG
+- VPC: default
+
+##### Inbound rules
+
+- type: http, source: anywhere(0.0.0.0/0)
+- Scroll down in the end click on "Create security group"
+
+#### Security group (continue..)
+
+- security group: DemoAppLB-SG
+
+#### Listeners and routing
+
+- Open in new tab by clicking on "Create target group"
+
+##### Basic configuration
+
+- choose a target type: instances
+- Target group name: DemoAppTG
+- Scroll down till end click on "Next"
+
+##### Register target
+
+- select server1 & server2, click on "Include as pending below"
+
+##### Review target
+
+- default
+- Scroll down till end click on "Create target group"
+
+#### Listening and routing (continue)
+
+- Default action: DemoAppTG
+- Scroll down till end click on "Create load balancer"
+
+#### Create Application Load Balancer
+
+- click on "View load balancer"
+
+### 59. Testing our application load balancer - [Lab]<a id="59"></a> Part-2
+
+#### Create Application Load Balancer
+
+- click on "View load balancer"
+- Check the status: Active (this will take 5 min)
+- copy DNS: DemoAppLB8.64....., paste to chrome url, refresh and notice private-ipv4-address is changing
+
+---
+
+- Go to aws console --> EC2 --> running instance
+- Open all running instance, stop server 1, then refresh chrome to notice only server 2 ip address is active
+
+Note- Every time we stop and start server the public and private ip changes
 
 ### 60. Auto Scaling Groups (ASG) - Overview<a id="60"></a>
+
+<img src="notes/asg 1.png" width="700">
+
+<img src="notes/asg 2.png" width="700">
+
+<img src="notes/asg 3.png" width="700">
+
+<img src="notes/asg 4.png" width="700">
+
+<img src="notes/asg 5.png" width="700">
+
+<img src="notes/asg 6.png" width="700">
+
+<img src="notes/asg 7.png" width="700">
+
+<img src="notes/asg 8.png" width="700">
 
 ### 61. Specify a launch template - [Lab]<a id="61"></a>
 
