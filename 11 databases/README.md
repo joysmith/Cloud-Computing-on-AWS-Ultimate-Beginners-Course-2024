@@ -1,31 +1,43 @@
-57. [Elastic Load Balancing (ELB) - Overview](#57)
-58. [Create an application load balancer - [Lab]](#58)
-59. [Testing our application load balancer - [Lab]](#59)
-60. [Auto Scaling Groups (ASG) - Overview](#60)
-61. [Specify a launch template - [Lab]](#61)
-62. [Create an auto scaling group - [Lab]](#62)
-63. [Auto scaling groups - Deep dive - [Lab]](#63)
-64. [Testing our auto scaling group - [Lab]](#64)
-65. [ELB/ASG - Resource cleanup - [Lab]](#65)
+90. [Database Introduction](#90)
+91. [Relational Database Service (RDS) - Overview](#91)
+92. [RDS - Launching our first database - [Lab]](#92)
+93. [RDS - Managing snapshots - [Lab]](#93)
+94. [RDS - Deployment configurations](#94)
+95. [DynamoDB - Overview](#95)
+96. [DynamoDB - Create a table - [Lab]](#96)
+97. [DynamoDB Accelerator (DAX) - Overview](#97)
+98. [ElastiCache - Overview](#98)
 
 ---
 
-<br>
+### 90. Database Introduction<a id="90"></a>
 
-### 57. Elastic Load Balancing (ELB) - Overview<a id="57"></a>
+<img src="notes/db 1.png" width="700">
 
-### 58. Create an application load balancer - [Lab]<a id="58"></a>
+<img src="notes/db 2.png" width="700">
 
-### 59. Testing our application load balancer - [Lab]<a id="59"></a>
+<img src="notes/db 3.png" width="700">
 
-### 60. Auto Scaling Groups (ASG) - Overview<a id="60"></a>
+<img src="notes/db 4.png" width="700">
 
-### 61. Specify a launch template - [Lab]<a id="61"></a>
+<img src="notes/db 5.png" width="700">
 
-### 62. Create an auto scaling group - [Lab]<a id="62"></a>
+### 91. Relational Database Service (RDS) - Overview<a id="91"></a>
 
-### 63. Auto scaling groups - Deep dive - [Lab]<a id="63"></a>
+<img src="notes/rds 1.png" width="700">
 
-### 64. Testing our auto scaling group - [Lab]<a id="64"></a>
+<img src="notes/rds 2.png" width="700">
 
-### 65. ELB/ASG - Resource cleanup - [Lab]<a id="65"></a>
+### 92. RDS - Launching our first database - [Lab]<a id="92"></a>
+
+### 93. RDS - Managing snapshots - [Lab]<a id="93"></a>
+
+### 94. RDS - Deployment configurations<a id="94"></a>
+
+### 95. DynamoDB - Overview<a id="95"></a>
+
+### 96. DynamoDB - Create a table - [Lab]<a id="96"></a>
+
+### 97. DynamoDB Accelerator (DAX) - Overview<a id="97"></a>
+
+### 98. ElastiCache - Overview<a id="98"></a>
