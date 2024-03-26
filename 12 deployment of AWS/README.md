@@ -214,6 +214,22 @@ PaaS, same service offers by heroku
 
 ### 111. Create an AWS CodeStar project - Part 1 - [Lab]<a id="111"></a>
 
+- Go to AWS console, In auto search type "COdeCommit" pit it to navigation bar
+- click on codeCOmmit
+- click on "Create repository"
+
+#### Repository settings
+
+- repository name: My-AWS-REPO
+- Description: My-AWS-REPO
+- Scroll down --> Next
+
+#### How to Delete Repository
+
+- Developer Tools --> CodeCommit --> Repositories --> ✅ My-AWS-REPO --> Delete repository
+
+####
+
 ### 112. Create an AWS CodeStar project - Part 2 - [Lab]<a id="112"></a>
 
 ### 113. AWS CodeArtificat - Overview<a id="113"></a>

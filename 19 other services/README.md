@@ -11,7 +11,12 @@
 
 ### 162. Amazon LightSail - Overview<a id='162'></a>
 
+<img src="notes/lightsail.png" width="700">
+
 ### 163. Explore the LightSail service - [Lab]<a id='163'></a>
+
+- Go to aws console, In auto search type "LightSail" pin it in navigation bar
+- click on lightsail
 
 ### 164. AWS Secrets manager - Overview<a id='164'></a>
 
