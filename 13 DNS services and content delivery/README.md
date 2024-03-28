@@ -337,8 +337,101 @@ echo "<h1> Hello from Mars!!! from $(hostname -f)</h1>" > /var/www/html/index.ht
 
 ### 124. Create a CloudFront distribution - [Lab]<a id="124"></a>
 
+- Go to AWS console, In auto search type "S3", "cloud front" pin them both in navigation bar
+- click on S3
+- S3 --> create bucket
+
+#### General configuration
+
+- Bucket name: demo-dss-bucket
+- Aws Region: Mumbai
+- Scroll down till bottom, click on "Create bucket"
+
+#### Buckets
+
+- clink on any bucket for moving further
+
+#### How to upload file(object) in bucket : File management operations
+
+- minimize browser horizontal then drag and drop image, index.html file
+- Scroll down to the bottom click on "Upload"
+
+##### How to view files : File management operations
+
+- Amazon S3 --> Buckets --> dss-demo-bucket --> click on "cat.jpg" --> open
+
+---
+
+#### CloudFront
+
+- click on CLoudFront from nav-bar
+- click on Create a CloudFront distribution
+
+#### Create distribution
+
+- origin domain: demo-dss-bucket.s3.amazonaws.com
+- name: demo-dss-bucket.s3.amazonaws.com
+- ✅ legacy access identities
+- origin access identity --> Create new OAI --> Create
+- Bucket policy: yes, update the bucket policy
+- scroll down
+
+#### Web application firewall(WAF)
+
+- ✅ Do not enable security protections
+- Default root object: index.html (file in our S3 bucket)
+- Scroll down till end --> Create distribution
+
+note: enabling security protections cost a lot of money
+
+---
+
+#### How to access home page from cloudfront/cdn
+
+- CloudFront --> Distribution
+- copy domain name and put in chrome url
+
+#### How to access other files from browser
+
+```sh
+copieddomainname.net/cat1.jpg
+```
+
+#### bucket policy for accessing file anywhere
+
+- Amazon S3 --> Buckets --> dss-demo-bucket --> Permission-tab
+
+#### Cleanup process
+
+- CloudFront --> Distribution --> ✅ E3UMS4V1FY8FO --> Disable
+- CloudFront --> Distribution --> ✅ E3UMS4V1FY8FO --> Delete (wait for few min to view delete option)
+
+- Amazon S3 --> Buckets --> ✅ dss-demo-bucket
+- Action --> empty
+- Action --> delete
+
 ### 125. AWS Global Accelerator - Overview<a id="125"></a>
 
 <img src="notes/global acclerator.png" width="700">
 
 ### 126. Evaluating the use of Global Accelerator - [Lab]<a id="126"></a>
+
+- [AWS Global Accelerator](https://speedtest.globalaccelerator.aws/#%2F)
+- select 2mb --> start
+
+- Go to aws console, in auto search type "EC2" open it
+- click on EC2 dashboard
+
+- On left side click hamburger icon, select Load Balancing-dropdown --> Load balancers
+
+#### Load balancers
+
+- click on "Create load balancer"
+
+#### Load balancers types
+
+- Application: create
+
+#### Add-on services
+
+- ✅ AWS global accelerator
