@@ -130,15 +130,33 @@ echo "<h1> Hello from Mars!!! from $(hostname -f)</h1>" > /var/www/html/index.ht
 - Go to Amazon SNS --> Topics --> ✅ Default_cloudWatch_alarm_topic2 --> delete
 - Go to Amazon SNS --> Subscription --> ✅ 56dfs5c6ds5f656fds --> delete
 
-- Go to CloudWatch --> ALrams --> ✅ MyFirstCWalarm
+- Go to CloudWatch --> ALrams-sidebar --> ✅ MyFirstCWalarm
 - Actions --> Delete
 
 ### 137. Interpreting CloudWatch logs - [Lab]<a id="137"></a>
 
+- Go to CloudWatch --> logs-sidebar
+
 ### 138. Amazon CloudTrail - Overview<a id="138"></a>
+
+<img src="notes/cloud trail.png" width="700">
+
+- Go to aws console, In auto search type "CloudTrail", pin it on navigation bar
+- click on "CloudTrail" --> Create trail
+
+#### Quick trail create
+
+- trail name: TrailMyAccount
+- Scroll down --> Create trail
+
+Note: this will create a trailing log in Amazon S3(bucket)
 
 ### 139. Setup a CloudTrail - [Lab]<a id="139"></a>
 
 ### 140. AWS Personal Health Dashboard - Overview<a id="140"></a>
 
+<img src="notes/health dashboard.png" width="700">
+
 ### 141. Exploring the AWS Personal Health Dashboard - [Lab]<a id="141"></a>
+
+- Go to aws console, On navigation bar click on "🔔Bell" icon --> see event log
