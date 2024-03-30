@@ -153,6 +153,9 @@ Note: this will create a trailing log in Amazon S3(bucket)
 
 ### 139. Setup a CloudTrail - [Lab]<a id="139"></a>
 
+- Go to aws console, In auto search type "CloudTrail", pin it on navigation bar
+- click on "CloudTrail" --> Create trail --> sidebar(explore them)
+
 ### 140. AWS Personal Health Dashboard - Overview<a id="140"></a>
 
 <img src="notes/health dashboard.png" width="700">
